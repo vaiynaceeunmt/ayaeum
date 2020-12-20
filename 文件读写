@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char ch,dic[100],temp[100];
+    int i=0,j=0,n=0;
+    FILE *fp;
+    fp=fopen("D:\\dic.txt","r");
+    if(fp==NULL)
+    {
+        printf("Can't open the file");
+        exit(0);
+    }
+    printf("yes");
+    while(fgets(dic[n],15,fp)!=NULL){
+        n++;
+        fputc(ch,fp);
+        printf("%c",ch);
+    }
+    fclose(fp);
+
+    return 0;
+}
