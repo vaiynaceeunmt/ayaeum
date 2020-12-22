@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char ch,dic[30],doc1,doc2;
+    int i=0,n=0;
+    FILE *fp1,*fp2;
+    doc1="D:\\log.txt";
+    doc2="D:\\dic.txt";
+    fp1=fopen("D:\\log.txt","r");
+    if(fp1==NULL)
+    {
+        printf("Can't open the file");
+        exit(0);
+    }
+    printf("文件打开成功\n");
+    while(fgets(dic[n],3,fp1)!=NULL)
+    {
+        n++;
+
+    }
+
+    fp2=fopen("D:\\dit.txt","w");
+    if(fp2==NULL)
+    {
+        printf("Can't open the file");
+           exit(0);
+    }
+    printf("文件打开成功");
+    for(i=0;i<n;i++)
+    {
+        fputs(dic[i],fp2);
+    }
+    fclose(fp1);
+    fclose(fp2);
+
+    return 0;
+}
