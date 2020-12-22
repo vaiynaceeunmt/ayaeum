@@ -3,33 +3,32 @@
 
 int main()
 {
-    char ch,dic[30],doc1,doc2;
+    char ch,dic[3000],doc1,doc2;
     int i=0,n=0;
     FILE *fp1,*fp2;
-    fp1=fopen("D:\\log.txt","r");
+    fp1=fopen("log.txt","r");
     if(fp1==NULL)
     {
-        printf("Can't open the file");
+        printf("Can't open the file\n");
         exit(0);
     }
     printf("文件打开成功\n");
-    while(fgets(dic[n],3,fp1)!=NULL)
+    while((ch=fgetc(fp1))!=EOF)
     {
+        dic[n] = ch;
         n++;
 
     }
 
-    fp2=fopen("D:\\dit.txt","w");
+    fp2=fopen("dit.txt","w");
     if(fp2==NULL)
     {
-        printf("Can't open the file");
+        printf("Can't open the file\n");
            exit(0);
     }
-    printf("文件打开成功");
-    for(i=0;i<n;i++)
-    {
-        fputs(dic[i],fp2);
-    }
+    printf("文件打开成功\n");
+    fputs(dic,fp2);
+    printf("%s\n",dic);
     fclose(fp1);
     fclose(fp2);
 
